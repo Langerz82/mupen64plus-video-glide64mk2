@@ -56,7 +56,7 @@ float lambda_color[2][4];
 int need_to_compile;
 
 static GLhandleARB fragment_shader_object;
-static GLhandleARB fragment_depth_shader_object;
+//static GLhandleARB fragment_depth_shader_object;
 static GLhandleARB vertex_shader_object;
 static GLhandleARB program_object_default;
 static GLhandleARB program_object_depth;
@@ -211,7 +211,7 @@ void init_combiner()
   int log_length;
 
   // depth shader
-  fragment_depth_shader_object = glCreateShaderObjectARB(GL_FRAGMENT_SHADER_ARB);
+  /*fragment_depth_shader_object = glCreateShaderObjectARB(GL_FRAGMENT_SHADER_ARB);
 
   char s[128];
   // ZIGGY convert a 565 texture into depth component
@@ -225,7 +225,7 @@ void init_combiner()
   glShaderSourceARB(fragment_depth_shader_object, 1, (const GLcharARB**)&fragment_shader, NULL);
   free(fragment_shader);
 
-  glCompileShaderARB(fragment_depth_shader_object);
+  glCompileShaderARB(fragment_depth_shader_object);*/
 
   // default shader
   fragment_shader_object = glCreateShaderObjectARB(GL_FRAGMENT_SHADER_ARB);
@@ -248,7 +248,7 @@ void init_combiner()
   // depth program
   program_object = glCreateProgramObjectARB();
   program_object_depth = program_object;
-  glAttachObjectARB(program_object, fragment_depth_shader_object);
+  //glAttachObjectARB(program_object, fragment_depth_shader_object);
   glAttachObjectARB(program_object, vertex_shader_object);
   glLinkProgramARB(program_object);
   glUseProgramObjectARB(program_object);
