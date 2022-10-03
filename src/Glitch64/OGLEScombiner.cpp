@@ -329,6 +329,7 @@ void init_combiner()
   int log_length;
 
 #ifndef ANDROID
+/*
   // depth shader
   fragment_depth_shader_object = glCreateShader(GL_FRAGMENT_SHADER);
 
@@ -346,6 +347,7 @@ void init_combiner()
 
   glCompileShader(fragment_depth_shader_object);
   check_compile(fragment_depth_shader_object);
+*/
 #endif
 
   // default shader
@@ -371,7 +373,7 @@ void init_combiner()
   // depth program
   program_object = glCreateProgram();
   program_object_depth = program_object;
-  glAttachShader(program_object, fragment_depth_shader_object);
+  //glAttachShader(program_object, fragment_depth_shader_object);
   glAttachShader(program_object, vertex_shader_object);
 
   glBindAttribLocation(program_object,POSITION_ATTR,"aPosition");

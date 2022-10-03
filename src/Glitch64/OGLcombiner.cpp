@@ -246,12 +246,12 @@ void init_combiner()
   glCompileShaderARB(vertex_shader_object);
 
   // depth program
-  program_object = glCreateProgramObjectARB();
-  program_object_depth = program_object;
+  //program_object = glCreateProgramObjectARB();
+  //program_object_depth = program_object;
   //glAttachObjectARB(program_object, fragment_depth_shader_object);
-  glAttachObjectARB(program_object, vertex_shader_object);
-  glLinkProgramARB(program_object);
-  glUseProgramObjectARB(program_object);
+  //glAttachObjectARB(program_object, vertex_shader_object);
+  //glLinkProgramARB(program_object);
+  //glUseProgramObjectARB(program_object);
 
   glGetObjectParameterivARB(program_object, GL_OBJECT_LINK_STATUS_ARB , &log_length);
   if(!log_length)
