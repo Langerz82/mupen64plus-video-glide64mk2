@@ -335,7 +335,7 @@ void init_combiner()
 
   char s[128];
   // ZIGGY convert a 565 texture into depth component
-  sprintf(s, "gl_FragDepth = dot(texture2D(texture0, vec2(gl_TexCoord[0])), vec4(31*64*32, 63*32, 31, 0))*%g + %g; \n", zscale/2/65535.0, 1-zscale/2);
+  sprintf(s, "gl_FragCoord.z = dot(texture2D(texture0, vec2(gl_TexCoord[0])), vec4(31*64*32, 63*32, 31, 0))*%g + %g; \n", zscale/2/65535.0, 1-zscale/2);
   fragment_shader = (char*)malloc(strlen(fragment_shader_header)+
     strlen(s)+
     strlen(fragment_shader_end)+1);
